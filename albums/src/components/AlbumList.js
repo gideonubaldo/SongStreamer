@@ -35,7 +35,7 @@ class AlbumList extends Component {
     return (
         <ScrollView>
           {this.renderAlbums()}
-        </ScrollView>
+        </ScrollView> 
       );
   }
 }

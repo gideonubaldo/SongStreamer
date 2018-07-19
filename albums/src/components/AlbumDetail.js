@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, View, Image } from 'react-native';
+import { Text, View, Image, Linking} from 'react-native';
 import Card from './Card';
 import CardSection from './CardSection';
 import Button from './Button';
@@ -10,10 +10,14 @@ import Button from './Button';
 const AlbumDetail = ({ album }) => {
   // this const is saying: I want my title,my thumbnail_image, and artst from album; des-structuring
   // so we dont have to do the dot thingy such as album.image. we could just call image itself
+
+          // the onPress or pressthis label property in button is an arbitrary label. 
+          // it is different from TouchableOpacity from the button.js itself
   const { title, 
     thumbnail_image,
     artist,
-    image
+    image,
+    url
     } = album;
   const { 
    thumbnailsStyle,
@@ -46,7 +50,9 @@ const AlbumDetail = ({ album }) => {
         </CardSection>
         
         <CardSection>
-          <Button />
+          <Button onPress={() => Linking.openURL(url)}>
+            Buy me
+          </Button>
         </CardSection>
       
       </Card>
